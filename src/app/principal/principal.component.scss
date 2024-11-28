@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+video {
+    width: 100%;
+    display: block; /* Elimina el espacio extra que los videos podrían tener como elementos inline-block */
+    margin: 0;
+    padding: 0;
+}
+
+.contenido {
+    background-color: #a6192e;
+    margin: 0;
+    padding: 20px; /* Ajusta el espacio interno si es necesario */
+    text-align: center; /* Centra el texto dentro de esta sección */
+    color: white; /* Agrega contraste al texto */
+}
+
+
