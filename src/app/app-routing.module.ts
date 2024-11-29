@@ -8,7 +8,7 @@ import { CultivadoComponent } from './cultivado/cultivado.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: '', redirectTo: '/principal', pathMatch: 'full' },
   { path: 'principal', component: PrincipalComponent },
   { path: 'cultivado', component: CultivadoComponent },
   { path: 'productos', component: ProductosComponent },
