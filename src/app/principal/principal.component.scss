@@ -35,15 +35,91 @@ svg {
 .contenido {
     background-color: #a6192e;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     text-align: center;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    gap: 0; /* Elimina el espacio entre imágenes */
 }
 
-h2{
+.contenido img {
+    display: block;
+    margin: 0; /* Elimina cualquier margen */
+    padding: 0; /* Elimina cualquier padding */
+    max-width: 100%; /* Ajusta al ancho máximo del contenedor */
+}
+
+h2 {
     font-family: "Lilita One", sans-serif;
     font-size: 70px;
 }
+
+/* Estilo general para el contenedor */
+/* Contenedor principal */
+/* Contenedor principal */
+.fondo-verde {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Imagen de escritorio (se muestra por defecto) */
+.imagen-desktop {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Imagen móvil (oculta por defecto) */
+.imagen-mobile {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Imagen descargada para escritorio (se muestra por defecto) */
+.imagen-descargada-desktop {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Imagen descargada para móvil (oculta por defecto) */
+.imagen-descargada-mobile {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ocultar imagen de escritorio */
+    .imagen-desktop {
+        display: none;
+    }
+    
+    /* Mostrar imagen móvil */
+    .imagen-mobile {
+        display: block;
+    }
+    
+    /* Ocultar imagen descargada en escritorio */
+    .imagen-descargada-desktop {
+        display: none;
+    }
+    
+    /* Mostrar imagen descargada para móvil */
+    .imagen-descargada-mobile {
+        display: block;
+    }
+}
+
+
+
+
+
 ul {
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -53,4 +129,9 @@ ul {
     border-radius: 2%;
     width: 70%;
     height: 70%;
+}
+img{
+    display: block;
+    margin-right:10px;
+    padding: 0;
 }
