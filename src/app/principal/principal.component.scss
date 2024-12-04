@@ -100,24 +100,20 @@ h2 {
         display: none;
     }
     
-    /* Mostrar imagen móvil */
-    .imagen-mobile {
-        display: block;
-    }
-    
     /* Ocultar imagen descargada en escritorio */
     .imagen-descargada-desktop {
         display: none;
     }
-    
-    /* Mostrar imagen descargada para móvil */
-    .imagen-descargada-mobile {
-        display: block;
-    }
 }
 
+.amarilla{
+    display: block;
+    width: 1888px;
+}
 
-
+.fondo-amarillo{
+    background-color: #ffb81c;
+}
 
 
 ul {
@@ -135,3 +131,35 @@ img{
     margin-right:10px;
     padding: 0;
 }
+.botes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -10px; /* Controla el espaciado negativo para superposición */
+    position: relative;
+}
+.mano{
+    width: 900px;
+    margin-left: 988px;
+}
+
+.rojo-amarillo{
+    width: 1888px;
+}
+.botes{
+    justify-content: left;
+    margin-left: 500px ;
+}
+.bote  {
+    position: relative;
+    margin: 0 -600px; /* Ajusta los márgenes negativos */
+    z-index: 1; /* Asegura el orden de las imágenes */
+    width: 1209px;
+}
+.marco{
+    position: relative;
+    margin: 0 -250px; /* Ajusta los márgenes negativos */
+    z-index: 1; /* Asegura el orden de las imágenes */
+    width: 569px;
+}
+
