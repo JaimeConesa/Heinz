@@ -16,8 +16,7 @@
 <body>
     <div class="contenedor">
         <div class="video-contenedor">
-            <video src="https://cdn.allotta.io/video/upload/f_auto/q_auto/v1718236287/fnkkj22ajob2ni63chrk.mp4" autoplay
-                muted loop></video>
+            <video src="https://cdn.allotta.io/video/upload/f_auto/q_auto/v1718236287/fnkkj22ajob2ni63chrk.mp4"muted  loop></video>
                 <svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 376 50.2" xml:space="preserve"
                 fill="var(--color-bg-primary)" width="100%" height="250%">
@@ -29,46 +28,66 @@
             <h2>TIENE QUE SER HEINZ</h2>
             <div class="salsas">
                 <ul>
-                    <li *ngFor="let salsa of salsas">
-                        <div>
+                    <li *ngFor="let salsa of salsas" class="salsa-item">
+                        <div class="salsa-container">
                             <img class="salsa" [src]="salsa.img" [alt]="salsa.name">
-                        </div>
-                        <div *ngIf="salsa.name">
-                            <h1>{{ salsa.name }}</h1>
+                            <div class="salsa-text">{{ salsa.name }}</div>
                         </div>
                     </li>
                 </ul>
             </div>
-            <img src="https://static.vecteezy.com/system/resources/previews/044/276/234/non_2x/hungry-woman-eating-burger-on-isolated-transparent-background-free-png.png"
+            <img class="mujer" src="https://static.vecteezy.com/system/resources/previews/044/276/234/non_2x/hungry-woman-eating-burger-on-isolated-transparent-background-free-png.png"
                 alt="">
         </div>
         <div class="fondo-verde">
+            <!-- Imagen principal con posición relativa para permitir superposición -->
             <img class="imagen-descargada-desktop" src="../../assets/img/descarga.png" alt="Imagen descargada">
-            <!-- Imagen de escritorio (desktop) -->
+        
+            <!-- Contenido sobre la imagen -->
+            <div class="overlay-content">
+                <h2>Kétchup, pero primero tomate</h2>
+                <p>El kétchup​ que sale de la botella solo puede ser igual de buena que los tomates que entran en ella. Descubre más aquí sobre lo que hace único el sabor de Heinz.</p>
+                <button class="boton-redondeado">Descargar</button>
+            </div>
+        
+            <!-- Imagen de escritorio -->
             <img class="imagen-desktop"
                 src="https://res.cloudinary.com/kraft-heinz-whats-cooking-ca/image/upload/f_auto/q_auto/c_limit,w_2048/f_auto/q_auto/v1/dxp-images/heinz/International/Master/pg-Home/Spain/or_creative-content-panel_34_hwe32h?_a=BAVAfVIB0"
                 alt="Imagen para escritorio">
+            
             <img class="amarilla"
                 src="https://res.cloudinary.com/kraft-heinz-whats-cooking-ca/image/upload/f_auto/q_auto/c_limit,w_1920/f_auto/q_auto/v1/dxp-images/heinz/International/Master/pg-Home/Spain/kdesz26xsiasmgdblghp?_a=BAVAfVIB0"
                 alt="">
         </div>
+        
         <div class="fondo-amarillo">
-            <img class="mano"
-                src="../../assets/img/mano.png"
-                alt="mierda">
+            <img class="mano" src="../../assets/img/mano.png" alt="">
+            <div class="overlay-content2">
+                <h2>Dale un giro a una<br> receta clásica</h2>
+                <p>Del kétchup a las alubias, inspírese con recetas atrevidas tan emblemáticas como Heinz.</p>
+                <button class="boton-redondeado">Más información</button>
+            </div>
         </div>
         <img class="rojo-amarillo" src="https://res.cloudinary.com/kraft-heinz-whats-cooking-ca/image/upload/f_auto/q_auto/c_limit,w_1920/f_auto/q_auto/v1/dxp-images/heinz/International/Master/pg-Home/Spain/or_creative-content-panel_D_10_qufu1u?_a=BAVAfVIB0"
             alt="">
-        <div class="fondo-rojo">
-            <div class="botes">
-                <img class="marco" src="https://images.squarespace-cdn.com/content/v1/5b7c0a6f3c3a532fdb5671ad/1690223211116-EP7CLMFBK8NC1N21BFPA/KEYSTONE.png" alt="">
-                <img class="bote" src="../../assets/img/k1.png" alt="">
-                <img class="bote" src="../../assets/img/k2.png" alt="">
-                <img class="bote" src="../../assets/img/k3.png" alt="">
-                <img class="bote" src="../../assets/img/k4.png" alt="">
-                <img class="bote" src="../../assets/img/k5.png" alt="">
+            <div class="fondo-rojo">
+                <div class="botes">
+                    <!-- Marco estático -->
+                    <img class="marco"
+                        src="https://images.squarespace-cdn.com/content/v1/5b7c0a6f3c3a532fdb5671ad/1690223211116-EP7CLMFBK8NC1N21BFPA/KEYSTONE.png"
+                        alt="Marco">
+                    
+                    <!-- Botes dinámicos -->
+                    <img *ngFor="let bote of botes" [src]="bote.img" [alt]="bote.id" class="bote">
+                </div>
+            
+                <!-- Overlay sobre las salsas -->
+                <div class="overlay-content-salsas">
+                    <h2>LA HISTORIA DE HEINZ</h2>
+                    <p>Henry J Heinz llevaba 25 años viviendo en Pensilvania cuando comenzó a vender el rábano picante de su madre. Decidió vender el producto en una botella transparente para demostrar la pureza y calidad.</p>
+                    <button class="boton-redondeado">Ver más</button>
+                </div>
             </div>
-        </div>
     </div>
 </body>
 

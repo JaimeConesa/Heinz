@@ -42,27 +42,30 @@ svg {
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
     gap: 0; /* Elimina el espacio entre imágenes */
+    margin-top: 40px;
+    position: relative;
+    z-index: 1; /* Asegura que los elementos de contenido estén detrás */
 }
 
-.contenido img {
+.contenido .mujer {
     display: block;
-    margin: 0; /* Elimina cualquier margen */
+    margin-top: 200px; /* Elimina cualquier margen */
     padding: 0; /* Elimina cualquier padding */
     max-width: 100%; /* Ajusta al ancho máximo del contenedor */
+    bottom: 1000px;
+    z-index: 0;
+    
 }
 
 h2 {
     font-family: "Lilita One", sans-serif;
     font-size: 70px;
+
 }
 
-/* Estilo general para el contenedor */
-/* Contenedor principal */
-/* Contenedor principal */
 .fondo-verde {
     position: relative;
     text-align: center;
-    margin: 0 auto;
 }
 
 /* Imagen de escritorio (se muestra por defecto) */
@@ -71,39 +74,129 @@ h2 {
     height: auto;
     display: block;
 }
-
-/* Imagen móvil (oculta por defecto) */
-.imagen-mobile {
-    display: none;
-    width: 100%;
-    height: auto;
-}
-
-/* Imagen descargada para escritorio (se muestra por defecto) */
 .imagen-descargada-desktop {
+    width: 100%;
+    height: auto;
     display: block;
+    position: relative;
+    z-index: 3; /* Por encima de la mujer */
     width: 100%;
     height: auto;
 }
-
-/* Imagen descargada para móvil (oculta por defecto) */
-.imagen-descargada-mobile {
-    display: none;
-    width: 100%;
-    height: auto;
+.overlay-content {
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    left: 70%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar */
+    text-align: center;
+    color: white; /* Texto blanco para destacar */
+    font-family: 'Chakra Petch', sans-serif;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados del fondo */
+}
+.overlay-content2 {
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    left: 30%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para centrar */
+    text-align: center;
+    color: white; /* Texto blanco para destacar */
+    font-family: 'Chakra Petch', sans-serif;
+    z-index: 10;
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados del fondo */
 }
 
-/* Media query para pantallas pequeñas */
-@media (max-width: 768px) {
-    /* Ocultar imagen de escritorio */
-    .imagen-desktop {
-        display: none;
-    }
-    
-    /* Ocultar imagen descargada en escritorio */
-    .imagen-descargada-desktop {
-        display: none;
-    }
+
+/* Botón redondeado */
+.boton-redondeado {
+    background-color: yellow;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.boton-redondeado:hover {
+    background-color: orange;
+}
+
+/* Fondo amarillo (para la mano) */
+.fondo-amarillo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.fondo-rojo {
+    position: relative;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Overlay específico para la sección de salsas (sobre fondo rojo) */
+.overlay-content-salsas {
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 70%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Corrección de centrado */
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 2; /* Asegura que esté sobre el contenido */
+}
+
+/* Botón redondeado */
+.boton-redondeado {
+    background-color: yellow;
+    border: none;
+    border-radius: 25px;
+    color: black;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.boton-redondeado:hover {
+    background-color: orange;
+}
+
+/* Imagen de las salsas y botes */
+.bote {
+    width: 150px; /* Ajusta el tamaño de los botes */
+    height: auto;
+    margin: 10px;
+    z-index: 1; /* Asegura que las imágenes estén debajo del overlay */
+}
+.mano {
+    width: 300px;
+    height: auto;
+    z-index: 1; /* Debajo del overlay */
+}
+/* Estilo del botón */
+.boton-redondeado {
+    background-color: #ffb81c; /* Color amarillo */
+    color: black; /* Texto negro */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 50px; /* Bordes completamente redondeados */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Efecto hover en el botón */
+.boton-redondeado:hover {
+    background-color: #e0a00b; /* Color amarillo oscuro al pasar el ratón */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 .amarilla{
@@ -116,16 +209,71 @@ h2 {
 }
 
 
-ul {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
+.salsas {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se acomoden en múltiples filas */
+    gap: 20px; /* Espaciado entre los elementos */
 }
-.salsa{
-    border-radius: 2%;
-    width: 70%;
-    height: 70%;
+
+/* Elementos <ul> */
+.salsas ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
+
+/* Estilo de los elementos <li> */
+.salsa-item {
+    position: relative;
+    width: 300px; /* Aumenta el ancho de la imagen */
+    height: 500px; /* Aumenta la altura para que sea proporcional */
+    overflow: hidden; /* Asegura que el texto no se salga del área de la imagen */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+/* Contenedor de imagen y texto */
+.salsa-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Imagen de las salsas */
+.salsa {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor */
+    transition: transform 0.3s ease-in-out; /* Suaviza el agrandamiento en hover */
+}
+
+/* Agrandar imagen en hover */
+.salsa-container:hover .salsa {
+    transform: scale(1.1); /* Agranda la imagen al pasar el ratón */
+}
+
+/* Texto sobre la imagen */
+.salsa-text {
+    position: absolute;
+    bottom: 0; /* Coloca el texto en el pie de la imagen */
+    width: 100%;
+    color: white; /* Color del texto */
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 16px;
+
+    transition: opacity 0.3s ease-in-out; /* Suaviza la aparición del texto */
+}
+
 img{
     display: block;
     margin-right:10px;
@@ -149,6 +297,14 @@ img{
 .botes{
     justify-content: left;
     margin-left: 500px ;
+    .botes {
+        display: flex;
+        justify-content: space-around; /* Espacio entre los botes */
+        position: relative;
+        gap: 0;
+        overflow: hidden; /* Evita que los botes se desborden */
+        width: 100%; /* O el tamaño que prefieras para el contenedor */
+    }
 }
 .bote  {
     position: relative;
@@ -162,4 +318,44 @@ img{
     z-index: 1; /* Asegura el orden de las imágenes */
     width: 569px;
 }
+
+@keyframes float {
+    0% {
+        transform: translateY(0); /* Comienza en su posición original */
+    }
+    50% {
+        transform: translateY(-10px); /* Se mueve hacia arriba */
+    }
+    100% {
+        transform: translateY(0); /* Regresa a su posición original */
+    }
+}
+
+/* Aplicamos la animación a las imágenes de los botes */
+.botes img {
+    animation: float 2s ease-in-out infinite; /* Animación continua */
+    display: block; /* Asegura que las imágenes se alineen correctamente */
+}
+
+/* Si quieres que la imagen del marco tenga una flotación más suave o diferente */
+.marco {
+    animation: float 3s ease-in-out infinite; /* Puede tener un ritmo distinto si lo prefieres */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
